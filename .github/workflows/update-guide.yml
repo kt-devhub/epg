@@ -38,7 +38,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          TIMESTAMP=$(date +"%y-%m-%d %-I %p")
+          TIMESTAMP=$(TZ="Asia/Hong_Kong" date +"%y-%m-%d %-I %p")
           git add guide.xml
           git commit -m "Update guide.xml - $TIMESTAMP"
           git push
