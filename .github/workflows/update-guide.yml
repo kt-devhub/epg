@@ -3,7 +3,7 @@ name: Update Guide
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "0 1 * * *"
 
 jobs:
   update-guide:
@@ -32,10 +32,15 @@ jobs:
           npm run grab --- --site=programme.tvb.com --lang=zh
           npm run grab --- --channels=user_channels.xml
 
+      - name: Adjust Timezone to +0800
+        run: |
+          sed -i 's/ +0000/ +0800/g' guide.xml
+
       - name: Commit and push changes
         run: |
+          TIMESTAMP=$(date +"%y-%m-%d %-I %p")
           git add guide.xml
-          git commit -m 'Update guide.xml'
+          git commit -m "Update guide.xml - $TIMESTAMP"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
