@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <channels>
   <channel site="programme.tvb.com" lang="zh" xmltv_id="Jade.hk" site_id="J">翡翠台</channel>
-  <channel site="programme.tvb.com" lang="zh" xmltv_id="Pearl.hk" site_id="P">明珠台</channel>
-  <channel site="programme.tvb.com" lang="zh" xmltv_id="TVBNewsChannel.hk" site_id="C">無綫新聞台</channel>
-  <channel site="tv.cctv.com" lang="zh" xmltv_id="BeijingSatelliteTV.cn" site_id="btv1">北京卫视</channel>
+  <channel site="epg.112114.xyz" lang="zh" xmltv_id="" site_id="凤凰资讯">凤凰资讯</channel>
+  <channel site="epg.112114.xyz" lang="zh" xmltv_id="" site_id="凤凰中文">凤凰中文</channel>
+  <channel site="epg.112114.xyz" lang="zh" xmltv_id="" site_id="凤凰香港">凤凰香港</channel>
+  <channel site="epg.112114.xyz" lang="zh" xmltv_id="" site_id="凤凰卫视中文台">凤凰卫视中文台</channel>
+  <channel site="nowplayer.now.com" lang="zh" xmltv_id="ViuTV.hk" site_id="099">ViuTV</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV1.cn" site_id="cctv1">CCTV 1</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV2.cn" site_id="cctv2">CCTV 2</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV3.cn" site_id="cctv3">CCTV 3</channel>
@@ -13,6 +15,8 @@
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV9.cn" site_id="cctvjilu">CCTV 9</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV13.cn" site_id="cctv13">CCTV 13</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTV14.cn" site_id="cctvchild">CCTV 14</channel>
+  <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTVCultureofQuality.cn" site_id="jingpin">CCTV央视文化精品</channel>
+  <channel site="tv.cctv.com" lang="zh" xmltv_id="CCTVWorldGeography.cn" site_id="shijiedili">CCTV世界地理</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="GuangdongSatelliteTV.cn" site_id="guangdong">广东卫视</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="GuangxiTV.cn" site_id="guangxi">广西卫视</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="HunanTV.cn" site_id="hunan">湖南卫视</channel>
@@ -20,4 +24,7 @@
   <channel site="tv.cctv.com" lang="zh" xmltv_id="ShandongTV.cn" site_id="shandong">山东卫视</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="ShenzhenTV.cn" site_id="shenzhen">深圳卫视</channel>
   <channel site="tv.cctv.com" lang="zh" xmltv_id="ZhejiangSatelliteTV.cn" site_id="zhejiang">浙江卫视</channel>
+  <channel site="tv.cctv.com" lang="zh" xmltv_id="DragonTV.cn" site_id="dongfang">东方卫视</channel>
+  <channel site="tv.cctv.com" lang="zh" xmltv_id="" site_id="chongqing">重庆卫视</channel>
+  <channel site="tv.cctv.com" lang="zh" xmltv_id="BeijingSatelliteTV.cn" site_id="btv1">北京卫视</channel>
 </channels>
