@@ -28,10 +28,6 @@ jobs:
 
       - name: Grab data from SITES and channels
         run: |
-          npm run grab --- --site=tv.cctv.com
-          npm run grab --- --site=programme.tvb.com --lang=zh
-          npm run grab --- --site=epg.112114.xyz
-          npm run grab --- --site=nowplayer.now.com --lang=zh
           npm run grab --- --channels=user_channels.xml
 
       - name: Commit and push changes
