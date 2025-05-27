@@ -7,6 +7,7 @@ Tools for downloading the EPG (Electronic Program Guide) for thousands of TV cha
 - ✨ [Installation](#installation)
 - 🚀 [Usage](#usage)
 - 💫 [Update](#update)
+- 🐋 [Docker](#docker)
 - 📺 [Playlists](#playlists)
 - 🗄 [Database](#database)
 - 👨‍💻 [API](#api)
@@ -57,7 +58,7 @@ Options:
   -c, --channels <path>         Path to *.channels.xml file (required if the "--site" attribute is
                                 not specified)
   -o, --output <path>           Path to output file (default: "guide.xml")
-  -l, --lang <code>             Allows to limit the download to channels in the specified language only (ISO 639-1 code)
+  -l, --lang <codes>            Allows you to restrict downloading to channels in specified languages only (example: "en,id")
   -t, --timeout <milliseconds>  Timeout for each request in milliseconds (default: 0)
   -d, --delay <milliseconds>    Delay between request in milliseconds (default: 0)
   -x, --proxy <url>             Use the specified proxy (example: "socks5://username:password@127.0.0.1:1234")
@@ -145,6 +146,62 @@ And then update all the dependencies:
 ```sh
 npm install
 ```
+
+## Docker
+
+### Build an image
+
+```sh
+docker build -t iptv-org/epg --no-cache .
+```
+
+### Create and run container
+
+```sh
+docker run -p 3000:3000 -v /path/to/channels.xml:/epg/channels.xml iptv-org/epg
+```
+
+By default, the guide will be downloaded every day at 00:00 UTC and saved to the `/epg/public/guide.xml` file inside the container.
+
+From the outside, it will be available at this link:
+
+```
+http://localhost:3000/guide.xml
+```
+
+or
+
+```
+http://<your_local_ip_address>:3000/guide.xml
+```
+
+### Environment Variables
+
+To fine-tune the execution, you can pass environment variables to the container as follows:
+
+```sh
+docker run \
+-p 5000:3000 \
+-v /path/to/channels.xml:/epg/channels.xml \
+-e CRON_SCHEDULE="0 0,12 * * *" \
+-e MAX_CONNECTIONS=10 \
+-e GZIP=true \
+-e PROXY="socks5://127.0.0.1:1234" \
+-e DAYS=14 \
+-e TIMEOUT=5 \
+-e DELAY=2 \
+iptv-org/epg
+```
+
+| Variable        | Description                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------ |
+| CRON_SCHEDULE   | A [cron expression](https://crontab.guru/) describing the schedule of the guide loadings (default: "0 0 \* \* \*") |
+| MAX_CONNECTIONS | Limit on the number of concurrent requests (default: 1)                                                            |
+| GZIP            | Boolean value indicating whether to create a compressed version of the guide (default: false)                      |
+| PROXY           | Use the specified proxy                                                                                            |
+| DAYS            | Number of days for which the guide will be loaded (defaults to the value from the site config)                     |
+| TIMEOUT         | Timeout for each request in milliseconds (default: 0)                                                              |
+| DELAY           | Delay between request in milliseconds (default: 0)                                                                 |
 
 ## Database
 
